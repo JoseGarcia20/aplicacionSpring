@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- ========== Etiquetas Meta ========== -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- ========== Link CSS Personalizado ========== -->
+		<link rel="stylesheet" th:href="@{/assets/css/styles.css}">
+		<!-- ========== Link BOOTSTRAP CSS ========== -->
+		<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}">
+		<!-- ========== Link FONT-AWESOME ========== -->
+	    <script th:src="@{https://kit.fontawesome.com/86129c09a5.js}"></script>
+	    <!-- ========== Titulo de Pestaña ========== -->
+		<title>Envio de Correos</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Spring Boot</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/listar}">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/form}">Crear Cliente</a>
+				</li>
+			     <li class="nav-item">
+					<a class="nav-link" th:href="@{/mail}">Mail</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+		<!-- ========== Cuerpo de la pagina ========== -->
+		<div class="contactenos d-flex justify-content-center align-items-center container-fluid bg-white py-4" id="contactenos" style="min-height: 100vh !important;">	
+			<div class="container text-center">			
+				<h1 class="py-sm-4 font-weight-light">CONTÁCTENOS</h1>		
+				<form th:action="@{/sendMail}" method="POST">		
+					<div class="input-group input-group-lg">						
+						<input type="text" class="form-control mb-3 mr-2 form-control-lg" name="nombre" placeholder="Nombre">
+						<input type="text" class="form-control mb-3 ml-2 form-control-lg" name="apellido" placeholder="Apellido">
+					</div>
+					<div class="input-group input-group-lg">
+						<input type="text" class="form-control mb-3 mr-2 form-control-lg" name="telefono" placeholder="Móvil">
+						<input type="text" class="form-control mb-3 ml-2 form-control-lg" name="correo" placeholder="Correo Electrónico">
+					</div>
+					<textarea class="form-control" rows="6" name="mensaje" placeholder="Escribe aquí tu mensaje"></textarea>
+					<input type="submit" class="btn btn-dark my-4 btn-lg py-3 text-uppercase" value="Enviar">
+				</form >
+			</div>
+		</div>
+		
+		<!-- ========== Link BOOTSTRAP JS ========== -->
+		<script th:src="@{https://code.jquery.com/jquery-3.2.1.slim.min.js}"></script>
+		<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js}"></script>
+		<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
+	</body>
+</html>
